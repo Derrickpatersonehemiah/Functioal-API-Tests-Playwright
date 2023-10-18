@@ -1,6 +1,4 @@
-const {test,expect} = require('@playwright/test')
-class LoginPage
-{
+class LoginPage{
 
 constructor(page)
 {
@@ -10,15 +8,15 @@ constructor(page)
     this.SubmitBtn = page.locator("[type='submit']")
 }
 
-async Login(username,password)
+async Login(data)
 {
-    await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-    await this.Username.fill(username);
-    await this.Password.fill(password);
+    await this.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+    await this.Username.fill(data.Username)
+    await this.Password.fill(data.Password)
     await this.SubmitBtn.click()
 }
 
 
 
 }
-module.exports ={LoginPage}
+module.exports = {LoginPage}
