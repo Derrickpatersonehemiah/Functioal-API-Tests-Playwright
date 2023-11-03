@@ -8,14 +8,14 @@
   },
   "jest": {
     "testPathIgnorePatterns": [
-      "tests/OrangeHRM-Recruitment-Add Functional Verification.spec.js"
+      "tests/ParaBank-Banking-API Verification.spec copy.spec.js"
     ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.29.0",
+    "@playwright/test": "1.39",
     "jest": "^29.4.2"
   },
   "dependencies": {

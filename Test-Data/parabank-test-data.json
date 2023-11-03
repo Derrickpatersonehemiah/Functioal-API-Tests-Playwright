@@ -1,0 +1,11 @@
+[
+    {   
+        "Username": "realuser@2345A",
+        "Password": "realuser@2345A",
+        "ExistingAccNo": "16119",
+        "CustomerId": "14654",
+        "TransferAmount": "100",
+        "NewAccountType": "SAVINGS"
+    }
+
+]

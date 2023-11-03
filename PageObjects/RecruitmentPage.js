@@ -1,4 +1,4 @@
-const {test,expect} = require('@playwright/test')
+const {expect} = require('@playwright/test')
 const date = require('date-and-time')
 class RecruitmentPage
 {
