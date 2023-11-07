@@ -44,6 +44,7 @@ constructor(page)
 
 async AccessRecuitmentPage()
 {
+    //to navigate to recruitment page and verify successfull navigation
     await this.RecruitmtentOption.click()
     await expect(this.page).toHaveURL(this.RecruitmentPageURL)
     await expect(this.PgHeader).toHaveText("Recruitment")
@@ -51,32 +52,35 @@ async AccessRecuitmentPage()
 
 async AccessAddCandidate()
 {
+    //to navigate to Add candidate page and verify successfull navigation
     await this.AddButton.click()
     await expect(this.page).toHaveURL(this.AddCandidateURL)
 }
 
 async FillCandidateDetails(data)
 {
-  const Getdate = new Date()  
-  const Enterdate = date.format(Getdate, 'YYYY-MM-DD')
-  await this.FName.fill(data.FirstName)
-  await this.LName.fill(data.LastName)
-  await this.MName.fill(`Test${data.no}`)
-  await this.DrpDown.click()
-  await this.ListBox.waitFor()
-  await this.page.locator(`text= ${data.Job}`).click()
-  await this.Email.fill(data.Email)
-  await this.PhNum.fill(data.PhoneNo)
-  await this.page.setInputFiles("div [type='file']", 'Test-Artifacts/Document.docx')
-  await this.Keywords.fill(`Test${data.no},Testrun${data.no},Testdata${data.no},Example${data.no},verification${data.no}`)
-  await this.AppDate.fill(Enterdate)
-  await this.Note.fill(`Candidate Addition submission verification, Test Run ${data.no} with all fields`)
-  await this.ConsentChkbox.check()
+    //to fill the candidate details on the fields as required as per data provided
+    const Getdate = new Date()  
+    const Enterdate = date.format(Getdate, 'YYYY-MM-DD')
+    await this.FName.fill(data.FirstName)
+    await this.LName.fill(data.LastName)
+    await this.MName.fill(`Test${data.no}`)
+    await this.DrpDown.click()
+    await this.ListBox.waitFor()
+    await this.page.locator(`text= ${data.Job}`).click()
+    await this.Email.fill(data.Email)
+    await this.PhNum.fill(data.PhoneNo)
+    await this.page.setInputFiles("div [type='file']", 'Test-Artifacts/Document.docx')
+    await this.Keywords.fill(`Test${data.no},Testrun${data.no},Testdata${data.no},Example${data.no},verification${data.no}`)
+    await this.AppDate.fill(Enterdate)
+    await this.Note.fill(`Candidate Addition submission verification, Test Run ${data.no} with all fields`)
+    await this.ConsentChkbox.check()
 
 }
 
 async VerificationOfFilledValues(data)
 {
+    //to verify whether the fields contain the values provided to fill
     const Getdate = new Date()  
     const Enterdate = date.format(Getdate, 'YYYY-MM-DD')
     await expect(this.FName).toHaveValue(data.FirstName)
@@ -95,6 +99,7 @@ async VerificationOfFilledValues(data)
 
 async SubmissionVerification()
 {
+    //to submit the form and verify its successfull submission
     await this.SubmitBtn.click()
     await this.Alert.waitFor()
     await expect(this.Alert).toHaveText("Successfully Saved")
@@ -102,6 +107,7 @@ async SubmissionVerification()
 
 async SearchCandidateBasedOnJobTitle(data)
 {
+    //to sort and submit filter search based on job title of the candidate
     console.log("Search by Job title")
     await this.JobTitleDrpDown.click()
     await this.ListBox.waitFor()
@@ -111,6 +117,7 @@ async SearchCandidateBasedOnJobTitle(data)
 
 async SearchCandidateBasedOnName(data)
 {
+    //to sort and submit filter search based on name of the candidate
     console.log("Search by Candidate Name")
     await this.SearchName.fill(data.FirstName)
     await this.NameListBox.first().waitFor()
@@ -120,6 +127,7 @@ async SearchCandidateBasedOnName(data)
 
 async SearchCandidateBasedOnStatus()
 {
+    //to sort and submit filter search based on status of the application of candidate addition
     console.log("Search by Status of application")
     await this.AppStatusDrpDown.click()
     await this.ListBox.waitFor()
@@ -129,6 +137,7 @@ async SearchCandidateBasedOnStatus()
 
 async SearchCandidateBasedOnAppDate()
 {
+    //to sort and submit filter search based on date of the application of candidate addition
     console.log("Search by Application date")
     const Tdydate = new Date()
     const Tdate = date.format(Tdydate, 'YYYY-MM-DD')  
@@ -141,6 +150,7 @@ async SearchCandidateBasedOnAppDate()
 
 async VerifySearchResult(data)
 {
+    //to verify sorted results based on different details by provided data of the candidate
     const Getdate = new Date()  
     const Enterdate = date.format(Getdate, 'YYYY-MM-DD')
     await this.page.getByRole('row').first().waitFor()
@@ -167,6 +177,7 @@ async VerifySearchResult(data)
 
 async SelectRowsBasedOnName(data)
 {
+    //to select rows from result based on the name of the candidate
     console.log("Selecting rows based on name")
     await this.page.getByRole('row').first().waitFor()
     const text = await this.RowNotext.textContent()
@@ -187,6 +198,7 @@ async SelectRowsBasedOnName(data)
 
 async DeleteSelectedRows()
 {
+    //to delete the selected rows and verify successfull deletion
     await this.DeleteSelectedBtn.click()
     await this.DeleteconfBtn.click()
     await this.Alert.waitFor()
@@ -195,6 +207,7 @@ async DeleteSelectedRows()
 
 async VerifyDeletionOfCandidate(data)
 {
+    //to verify sorting by name of the candidate and verifying the null result after deletion
     await this.SearchName.fill(data.FirstName)
     await expect(this.SearchName).toHaveValue(data.FirstName)
     await expect(this.page.locator(`//div/span[contains(text(),"${data.FirstName} Test${data.no} ${data.LastName}")]`)).toBeHidden()

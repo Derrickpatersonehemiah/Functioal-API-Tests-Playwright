@@ -4,12 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "tests/ParaBank-Banking-API Verification.spec copy.spec.js"
-    ]
   },
   "keywords": [],
   "author": "",

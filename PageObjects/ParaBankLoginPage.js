@@ -8,6 +8,7 @@ class LoginPage{
 
 async ParaBankLogin(request,data)
 {
+    //to send API request for logging in and verifying login response
     const Login = await request.post(this.LoginRequest,
             {
                 form: {

@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test')
 
 
-
+//API verification of a product lifecycle in cart
 test.describe('Verification of product cycle in cart', () => {
     const dataSet = {
         "id": "075fb584-9f44-9a8b-3d4d-905ee9469275",
@@ -11,6 +11,7 @@ test.describe('Verification of product cycle in cart', () => {
     }
     test('Adding a product to cart', async ({ request }) => {
 
+        //Adding specified product on data set to cart
         const response = await request.post('https://api.demoblaze.com/addtocart',
             {
                 data: dataSet
@@ -20,6 +21,7 @@ test.describe('Verification of product cycle in cart', () => {
 
     test('Verify product in Cart', async ({ request }) => {
 
+        //verifying whether the product selected is added to the cart
         const response = await request.post('https://api.demoblaze.com/viewcart',
             {
                 data: dataSet
@@ -34,12 +36,17 @@ test.describe('Verification of product cycle in cart', () => {
 
     test('Remove product from Cart', async ({ request }) => {
 
+        //verification of deleting the item from cart
         const response = await request.post('https://api.demoblaze.com/deletecart',
             {
                 data: dataSet
             })
         expect(await response.status()).toBe(200)
         expect(await response.text()).toContain("Item deleted.")
+        const text = await response.text()
+        const result = JSON.parse(text)
+        expect(await response.status()).toBe(200)
+        expect(await result).toBe(null)
     })
 
 

@@ -5,6 +5,7 @@ const { AccountOverivewPage } = require('../PageObjects/AccountOverivewPage')
 const { TransferFundsPage } = require('../PageObjects/TransferFundsPage')
 var testdata = require('../test-data/parabank-test-data.json')
 
+//API verification banking functionalities through data driven method
 testdata.forEach(data => {
     test.describe('API Verification of Banking operations, ', () => {
 
