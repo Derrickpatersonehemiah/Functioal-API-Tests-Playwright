@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test')
-const { LoginPage } = require('../PageObjects/LoginPage')
-const { RecruitmentPage } = require('../PageObjects/RecruitmentPage')
+const { LoginPage } = require('../PageObjects/OrangeHRMLoginPage')
+const { RecruitmentPage } = require('../PageObjects/OrangeHRMRecruitmentPage')
 var testdata = require('../test-data/recruitment-test-data.json')
 
 

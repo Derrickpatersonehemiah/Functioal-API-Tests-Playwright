@@ -1,0 +1,8 @@
+[
+    {   
+        "Username":"testmailplaywright@gmail.com",
+        "Password":"Test@playwright",
+        "InvalidUsername":"testmailplaywright.gmail.com",
+        "InvalidPassword":"Testplaywright"
+    }
+]

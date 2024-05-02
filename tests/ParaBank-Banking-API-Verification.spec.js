@@ -1,8 +1,8 @@
 const { test, expect } = require('@playwright/test')
 const { LoginPage } = require('../PageObjects/ParaBankLoginPage')
-const { CreateNewAccountPage } = require('../PageObjects/CreateNewAccountPage')
-const { AccountOverivewPage } = require('../PageObjects/AccountOverivewPage')
-const { TransferFundsPage } = require('../PageObjects/TransferFundsPage')
+const { CreateNewAccountPage } = require('../PageObjects/ParaBankCreateNewAccountPage')
+const { AccountOverivewPage } = require('../PageObjects/ParaBankAccountOverivewPage')
+const { TransferFundsPage } = require('../PageObjects/ParaBankTransferFundsPage')
 var testdata = require('../test-data/parabank-test-data.json')
 
 //API verification banking functionalities through data driven method

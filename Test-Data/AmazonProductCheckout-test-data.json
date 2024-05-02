@@ -1,0 +1,18 @@
+[
+    {   
+        "Username":"testmailplaywright@gmail.com",
+        "Password":"Test@playwright",
+        "Name":"PlaywrightTest",
+        "Address": "- Kingston St",
+        "City": "Lawrence",
+        "ZipCode": "01843",
+        "State": "Massachusetts",
+        "SearchProduct": "oneplus open",
+        "ProductName": "Open",
+        "Detail1": "512GB",
+        "Detail2": "16GB",
+        "Quantity": "1",
+        "PhoneNo": "9876543210"
+    }
+
+]
